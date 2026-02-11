@@ -232,6 +232,10 @@ class Repo:
         self.artifacts: Artifacts = Artifacts(self)
         self.datasets: Datasets = Datasets(self)
 
+        from dvc.oodcp.app.manager import OodcpManager
+
+        self.oodcp: OodcpManager = OodcpManager(self)
+
         self.stage_collection_error_handler: Optional[
             Callable[[str, Exception], None]
         ] = None

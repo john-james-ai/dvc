@@ -384,6 +384,10 @@ SCHEMA = {
             "password": str,
         },
     },
+    "oodcp": {
+        Optional("enabled", default=False): Bool,
+        "db_url": str,
+    },
 }
 
 

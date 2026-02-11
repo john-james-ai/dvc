@@ -34,6 +34,10 @@ def _get(stage, p, info, **kwargs):
         return DbDependency(stage, d)
 
     assert p
+    from .oodcp import OodcpDependency
+
+    if OodcpDependency.is_oodcp(p):
+        return OodcpDependency(stage, p, info)
     if DatasetDependency.is_dataset(p):
         return DatasetDependency(stage, p, info)
     if repo:
